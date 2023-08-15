@@ -1,0 +1,30 @@
+{
+  "name": "@wycmaker/vue-cli-plugin-electron-builder",
+  "version": "1.0.0",
+  "description": "a vue-cli and Electron combinational Plugin used to register commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "electron-builder",
+    "vue-cli",
+    "vue-cli-plugin",
+    "vue-cli-plugin-electron-builder"
+  ],
+  "author": "Jackson Wang <jackson@stbear.com.tw>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wycmaker/vue-cli-plugin-electron-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wycmaker/vue-cli-plugin-electron-builder/issues"
+  },
+  "homepage": "https://github.com/wycmaker/vue-cli-plugin-electron-builder#readme",
+  "devDependencies": {
+    "electron": "^13.0.0",
+    "electron-builder": "^22.14.13"
+  }
+}
