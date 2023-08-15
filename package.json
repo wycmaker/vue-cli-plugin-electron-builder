@@ -1,6 +1,6 @@
 {
   "name": "@wycmaker/vue-cli-plugin-electron-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a vue-cli and Electron combinational Plugin used to register commands",
   "main": "index.js",
   "scripts": {

@@ -3,15 +3,24 @@ const path = require('path')
 const { spawn } = require('child_process')
 const electronPath = require('electron')
 const builder = require('electron-builder')
+const webpack = require('webpack')
 
 module.exports = (api, options) => {
   api.registerCommand('electron:serve', async args => {
+    const webpackConfig = api.resolveWebpackConfig()
+    const compiler = webpack(webpackConfig)
+    let child_process
+    compiler.hooks.shutdown.tap('vue-cli-service serve', msg => {
+      error(msg)
+      child_process.kill()
+    })
+
     await api.service.run('serve', args).then(res => {
       const env = Object.assign(process.env, {
         VUE_DEV_SERVER_HOST: res.url
       })
 
-      spawn(electronPath, ['.'], { stdio: 'inherit', env }).on('error', (err) => {
+      child_process = spawn(electronPath, ['.'], { stdio: 'inherit', env }).on('error', (err) => {
         console.log(err)
       }).on('close', () => {
         process.exit(1)
